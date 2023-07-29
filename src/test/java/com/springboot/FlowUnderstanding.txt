@@ -1,0 +1,13 @@
+Step - 1 - Get Customer Segment using the API by passing userid as query parameter GET /api/v1/user_segment?user_id=1
+
+
+Step - 2 - Define Offer for each Restaurant ID for different types of Customer Segment using the API POST - /api/v1/offer
+Assuming two valid value for offer_type
+FLATX = FLAT x amount off
+FLATXP = FLAT x% off.
+Taking two cases for same Restaurant with ID as 1
+{“restaurant_id”:1,”offer_type”: “FLATX”, “offer_value”:10, “customer_segment”:[“p1”]} ---- > for P1 offer will be FLAT x amount off
+{“restaurant_id”:1,”offer_type”: “FLATXP”, “offer_value”:10, “customer_segment”:[“p2”,"p3"]} ---- > for P2,P3 offer will be FLAT x % off
+
+Step - 3 - Finally apply offer using Restaurant id and user id using the cart API - POST /api/v1/cart/apply_offer
+Writing Testcases only for Step 3 as mentioned in the Problem Statement

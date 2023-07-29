@@ -14,3 +14,7 @@ The server will start at port 9001
 
 # How to run the tests
 ./mvnw test  
+
+# To run test with html report
+mvn surefire-report:report
+
